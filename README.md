@@ -8,7 +8,7 @@ This repo documents a lightweight reproduction based on **[eznlp](https://github
 
 Nested NER requires costly nested annotations, while many corpora (e.g., CoNLL 2003) are flat. The **Nested-from-Flat (NFF)** setting asks:  
 > *Can we train on flat data only and still detect nested entities?*  
-We build on span-based models (e.g., DSpERT) and simple training rules to mitigate unlabeled nested entities inside gold spans. :contentReference[oaicite:0]{index=0}
+We build on span-based models (e.g., DSpERT) and simple training rules to mitigate unlabeled nested entities inside gold spans.
 
 ---
 
@@ -19,10 +19,10 @@ We build on span-based models (e.g., DSpERT) and simple training rules to mitiga
 3. Two training options:
    - **Ignore** all within-entity spans in the loss.
    - **Sample** a tiny portion of within-entity spans as negatives with rate **γ** to balance precision/recall  
-     (empirically γ≈0.005 on ACE04/05; γ≈0.05 on GENIA). :contentReference[oaicite:1]{index=1}
+     (empirically γ≈0.005 on ACE04/05; γ≈0.05 on GENIA).
 4. **Inference**: classify *all* spans; nested predictions emerge naturally.
 
-For background on deep span representations and their benefits for nested structures, see **DSpERT**. :contentReference[oaicite:2]{index=2}
+For background on deep span representations and their benefits for nested structures, see **DSpERT**.
 
 ---
 
@@ -32,7 +32,7 @@ For background on deep span representations and their benefits for nested struct
 - **GENIA** (biomedical; DNA/RNA/Protein/Cell Line/Cell Type)  
 - (Optional) **KBP 2017**, **NNE** for extra evaluation
 
-**NFF setup**: remove nested labels from **train/dev** (to make supervision flat); keep **test** with gold nested labels for evaluation. :contentReference[oaicite:3]{index=3}
+**NFF setup**: remove nested labels from **train/dev** (to make supervision flat); keep **test** with gold nested labels for evaluation. 
 
 ---
 
@@ -45,7 +45,7 @@ For background on deep span representations and their benefits for nested struct
 | ACE 2005 | **54.2** |
 | GENIA    | **41.1** |
 
-These show NFF is feasible with strong span models. (Numbers quoted from the NFF paper.) :contentReference[oaicite:4]{index=4}
+These show NFF is feasible with strong span models. (Numbers quoted from the NFF paper.)
 
 ---
 
